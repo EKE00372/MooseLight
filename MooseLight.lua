@@ -34,6 +34,18 @@ local ID = {
 	
 	-- Siege of Boralus / 波拉勒斯圍城戰
 	[1162] = true,
+	
+	-- Uldir / 奧迪爾
+	--[[
+	[1148] = true,	-- Ruin's Descent(一王)
+	[1149] = true,	-- Hall of Sanitation(二王)
+	[1150] = true,	-- Ring of Containment
+	[1151] = true,	-- Archives of Eternity(蟲)
+	[1152] = true,	-- Plague Vault(維克提斯)
+	[1153] = true,	-- Gallery of Failures(狗)
+	[1154] = true,	-- The Oblivion Door(祖爾)
+	[1155] = true,	-- The Festering Core(尾王)
+	]]--
 }
 
 local function changeGamma()
