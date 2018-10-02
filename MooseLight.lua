@@ -35,6 +35,13 @@ local ID = {
 	-- Siege of Boralus / 波拉勒斯圍城戰
 	[1162] = true,
 	
+	-- Temple of Sethraliss / 瑟沙利斯神廟
+	[1038] = true,
+	--[1042] = true,	-- Atrium of Sethraliss
+	
+	-- Shrine of the Storm / 風暴聖壇
+	--[1040] = true,
+	
 	-- Uldir / 奧迪爾
 	--[[
 	[1148] = true,	-- Ruin's Descent(一王)
