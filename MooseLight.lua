@@ -44,13 +44,15 @@ local function changeGamma()
 	end
 end
 
+local function eventHandler(self, event, ...)
+	changeGamma() 
+end
+
 local CG = CreateFrame("Frame", "changeGamma")
 	CG:RegisterEvent("PLAYER_LOGIN")
 	CG:RegisterEvent("PLAYER_ENTERING_WORLD")
 	CG:RegisterEvent("ZONE_CHANGED")
 	CG:RegisterEvent("ZONE_CHANGED_INDOORS")
 	CG:RegisterEvent("ZONE_CHANGED_NEW_AREA")
-local function eventHandler(self, event, ...)
-	changeGamma() 
-end
-CG:SetScript("OnEvent", eventHandler)
+
+	CG:SetScript("OnEvent", eventHandler)
