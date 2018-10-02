@@ -2,6 +2,8 @@
 
 -- add new map id by yourself:
 -- https://wow.gamepedia.com/UiMapID
+-- macro to get your map id:
+-- /dump C_Map.GetBestMapForUnit("player")
 
 local ID = {
 	-- Orgrimmar / 奧格瑪
