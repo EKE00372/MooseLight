@@ -5,12 +5,15 @@
 -- macro to get your map id:
 -- /dump C_Map.GetBestMapForUnit("player")
 
+local timeID = {
+	[896] = true,	-- Drustvar / 佐司瓦
+	[942] = true,	-- Stormsong Valley / 斯托頌恩
+	[1196] = true,	-- Tiragarde Sound / 提加拉德
+}
+
 local ID = {
 	-- Orgrimmar / 奧格瑪
 	[86] = true,	-- 暗影裂谷
-	
-	-- Drustvar / 佐司瓦
-	[896] = true,
 	
 	-- 威奎斯特莊園 / Waycrest Manor
 	[1015] = true,	-- The Grand Foyer 
@@ -43,12 +46,12 @@ local ID = {
 	--[1040] = true,
 	
 	-- Uldir / 奧迪爾
+	[1152] = true,	-- Plague Vault(維克提斯)
 	--[[
 	[1148] = true,	-- Ruin's Descent(一王)
 	[1149] = true,	-- Hall of Sanitation(二王)
 	[1150] = true,	-- Ring of Containment
 	[1151] = true,	-- Archives of Eternity(蟲)
-	[1152] = true,	-- Plague Vault(維克提斯)
 	[1153] = true,	-- Gallery of Failures(狗)
 	[1154] = true,	-- The Oblivion Door(祖爾)
 	[1155] = true,	-- The Festering Core(尾王)
@@ -65,8 +68,22 @@ local function changeGamma()
 	end
 end
 
+
+local function changeGammabyTime()
+	local hour, _ = GetGameTime()
+	local MapId = C_Map.GetBestMapForUnit("player")
+	if MapId and timeID[MapId] then
+		if hour > 17 or hour < 6 then
+			SetCVar("Gamma", 1.2)
+		else
+			SetCVar("Gamma", 1)
+		end
+	end
+end
+
 local function eventHandler(self, event, ...)
-	changeGamma() 
+	changeGamma()
+	changeGammabyTime()
 end
 
 local CG = CreateFrame("Frame", "changeGamma")
@@ -75,5 +92,7 @@ local CG = CreateFrame("Frame", "changeGamma")
 	CG:RegisterEvent("ZONE_CHANGED")
 	CG:RegisterEvent("ZONE_CHANGED_INDOORS")
 	CG:RegisterEvent("ZONE_CHANGED_NEW_AREA")
+	CG:RegisterEvent("VARIABLES_LOADED")
+	--CG:RegisterEvent("PLAYER_REGEN_ENABLED")
 
 	CG:SetScript("OnEvent", eventHandler)

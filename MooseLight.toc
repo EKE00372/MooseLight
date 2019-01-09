@@ -1,6 +1,6 @@
 ## Interface: 80000
 ## Title: |cff00ffffMoose|rLight
-## Version: R1
+## Version: R1.1
 ## Author: EK (Linodas@Illidan-US)
 ## Notes: adjust gamma when player enter some zones and dungeons.
-code.lua
+MooseLight.lua
