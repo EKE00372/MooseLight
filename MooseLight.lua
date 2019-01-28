@@ -7,8 +7,12 @@
 
 local timeID = {
 	[896] = true,	-- Drustvar / 佐司瓦
+	[895] = true,	-- Tiragarde Sound / 提加拉德
 	[942] = true,	-- Stormsong Valley / 斯托頌恩
-	[1196] = true,	-- Tiragarde Sound / 提加拉德
+	--[1196] = true,
+	--[1197] = true,
+	--[1198] = true,
+	
 }
 
 local ID = {
@@ -72,12 +76,14 @@ end
 local function changeGammabyTime()
 	local hour, _ = GetGameTime()
 	local MapId = C_Map.GetBestMapForUnit("player")
-	if MapId and timeID[MapId] then
-		if hour > 17 or hour < 6 then
+	if MapId and timeID[MapId] then		
+		if hour and (hour < 6 or hour > 18) then
 			SetCVar("Gamma", 1.2)
 		else
 			SetCVar("Gamma", 1)
 		end
+	else
+		SetCVar("Gamma", 1)
 	end
 end
 
