@@ -64,32 +64,22 @@ local ID = {
 
 local function changeGamma()
 	local MapId = C_Map.GetBestMapForUnit("player")
+	local hour, _ = GetGameTime()
 	if MapId and ID[MapId] then
 		-- set gamma here
 		SetCVar("Gamma", 1.2)
-	else
-		SetCVar("Gamma", 1)
-	end
-end
-
-
-local function changeGammabyTime()
-	local hour, _ = GetGameTime()
-	local MapId = C_Map.GetBestMapForUnit("player")
-	if MapId and timeID[MapId] then		
+	elseif MapId and timeID[MapId] then
 		if hour and (hour < 6 or hour > 18) then
 			SetCVar("Gamma", 1.2)
-		else
-			SetCVar("Gamma", 1)
 		end
 	else
 		SetCVar("Gamma", 1)
 	end
 end
 
+
 local function eventHandler(self, event, ...)
 	changeGamma()
-	changeGammabyTime()
 end
 
 local CG = CreateFrame("Frame", "changeGamma")
