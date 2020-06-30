@@ -3,5 +3,7 @@
 ## Version: R2
 ## Author: EK (Linodas@Illidan-US)
 ## Notes: adjust gamma when player enter some zones and dungeons.
+## Notes-zhTW: 進入某些地區時自動更改畫面亮度。
+## Notes-zhCN: 进入某些地区时自动更改画面亮度。
 
 MooseLight.lua
