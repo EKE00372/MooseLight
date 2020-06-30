@@ -1,7 +1,0 @@
-## Interface: 80200
-## Title: |cff00ffffMoose|rLight
-## Version: R1.5
-## Author: EK (Linodas@Illidan-US)
-## Notes: adjust gamma when player enter some zones and dungeons.
-
-MooseLight.lua
