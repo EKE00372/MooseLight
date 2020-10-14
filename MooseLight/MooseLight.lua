@@ -47,6 +47,10 @@ local zoneID = {
 	[1470] = true, -- Vision of Stormwind / 暴風城幻象
 	[1570] = true, -- 恆春谷幻象
 	[1571] = true, -- 奧丹姆幻象
+	
+	-- 血紅深淵 / Sanguine Depths
+	[1675] = true,
+	[1676] = true,
 }
 
 local nameList = {

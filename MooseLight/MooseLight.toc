@@ -1,6 +1,6 @@
-## Interface: 80300
+## Interface: 90001
 ## Title: |cff00ffffMoose|rLight
-## Version: R2
+## Version: R2.1
 ## Author: EK (Linodas@Illidan-US)
 ## Notes: adjust gamma when player enter some zones and dungeons.
 ## Notes-zhTW: 進入某些地區時自動更改畫面亮度。
