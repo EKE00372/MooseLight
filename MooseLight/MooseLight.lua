@@ -16,7 +16,19 @@ local timeID = {
 	--[1198] = true,
 }
 
-local zoneID = {
+local zoneDarkID = {
+	[1533] = true,	-- Bastion / 昇靈堡
+	[1707] = true,	-- Elysian Hold, Archon's Rise / 樂土堡
+	[1708] = true,	-- Elysian Hold, Sanctum of Binding / 樂土堡
+	
+	-- 	Spires Of Ascension
+	[1692] = true,
+	[1693] = true,
+	[1694] = true,
+	[1695] = true,
+}
+
+local zoneLightID = {
 	[86] = true,	-- Orgrimmar / 奧格瑪暗影裂谷
 	
 	--[1040] = true,-- Shrine of the Storm / 風暴聖壇
@@ -62,32 +74,40 @@ local C_Map_GetBestMapForUnit = C_Map.GetBestMapForUnit
 local GetGameTime, GetSubZoneText = GetGameTime, GetSubZoneText
 local SetCVar = SetCVar
 
-local function changeGamma()
+local function OnEvent()
 	local MapId = C_Map_GetBestMapForUnit("player")
 	local hour = GetGameTime()
 	local name = GetSubZoneText()
 	
 	if not MapId then return end
 	
-	if zoneID[MapId] then
+	if zoneLightID[MapId] then
 		-- set gamma here
-		SetCVar("Gamma", 1.2)
+		SetCVar("Gamma", 1.2)		-- 0.3~2.8
+		SetCVar("Brightness", 50)	-- 1~100
+	elseif zoneDarkID[MapId] then
+		SetCVar("Gamma", .9)
+		SetCVar("Brightness", 40)
 	elseif timeID[MapId] then
 		if hour and (hour < 6 or hour > 17) then
 			SetCVar("Gamma", 1.2)
+			SetCVar("Brightness", 50)
 		else
 			SetCVar("Gamma", 1)
+			SetCVar("Brightness", 50)
 		end
 	elseif nameList[name] then
 		SetCVar("Gamma", 1.2)
+		SetCVar("Brightness", 50)
 	else
 		SetCVar("Gamma", 1)
+		SetCVar("Brightness", 50)
 	end
 end
 
-local CG = CreateFrame("Frame", "changeGamma")
+local CG = CreateFrame("Frame")
 	CG:RegisterEvent("PLAYER_ENTERING_WORLD")
 	CG:RegisterEvent("ZONE_CHANGED")
 	CG:RegisterEvent("ZONE_CHANGED_INDOORS")
 	CG:RegisterEvent("ZONE_CHANGED_NEW_AREA")	
-	CG:SetScript("OnEvent", changeGamma)
+	CG:SetScript("OnEvent", OnEvent)
