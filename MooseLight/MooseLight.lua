@@ -31,11 +31,9 @@ local zoneDarkID = {
 local zoneLightID = {
 	[86] = true,	-- Orgrimmar / 奧格瑪暗影裂谷
 	
-	--[1040] = true,-- Shrine of the Storm / 風暴聖壇
 	[1004] = true,	-- Kings' Rest / 諸王之眠
 	[1162] = true,	-- Siege of Boralus / 波拉勒斯圍城戰
 	[1038] = true,	-- Temple of Sethraliss / 瑟沙利斯神廟
-	--[1042] = true,	-- Atrium of Sethraliss / 瑟沙利斯中庭
 	[1152] = true,	-- Uldir, Plague Vault / 奧迪爾維克提斯
 	
 	-- 威奎斯特莊園 / Waycrest Manor
