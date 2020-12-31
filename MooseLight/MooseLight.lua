@@ -101,11 +101,15 @@ local function OnEvent()
 		SetCVar("Gamma", 1)
 		SetCVar("Brightness", 50)
 	end
+	
+	-- FUCK YOU!
+	SetCVar("ffxGlow", 0)
+	SetCVar("ffxDeath", 0)
 end
 
 local CG = CreateFrame("Frame")
 	CG:RegisterEvent("PLAYER_ENTERING_WORLD")
 	CG:RegisterEvent("ZONE_CHANGED")
 	CG:RegisterEvent("ZONE_CHANGED_INDOORS")
-	CG:RegisterEvent("ZONE_CHANGED_NEW_AREA")	
+	CG:RegisterEvent("ZONE_CHANGED_NEW_AREA")
 	CG:SetScript("OnEvent", OnEvent)
