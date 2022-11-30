@@ -53,14 +53,33 @@ local zoneLightID = {
 	[980] = true,	-- Overseer's Summit
 	[1169] = true,	-- Tol Dagor outside / 托達戈爾戶外	
 	
-	[1469] = true, -- Vision of Orgrimmar / 奧格瑪幻象
-	[1470] = true, -- Vision of Stormwind / 暴風城幻象
-	[1570] = true, -- 恆春谷幻象
-	[1571] = true, -- 奧丹姆幻象
+	[1469] = true,	-- Vision of Orgrimmar / 奧格瑪幻象
+	[1470] = true,	-- Vision of Stormwind / 暴風城幻象
+	[1570] = true,	-- 恆春谷幻象
+	[1571] = true,	-- 奧丹姆幻象
 	
 	-- 血紅深淵 / Sanguine Depths
 	[1675] = true,
 	[1676] = true,
+	
+	-- 晶紅生命之池 / Ruby Life Pools
+	[2095] = true,	-- 閃霜入侵點 / Infusion Chambers
+	
+	-- 蒼藍密庫 / The Azure Vault
+	[2073] = true,	-- The Arcane Conservatory
+	[2074] = true,	-- Upper Chamber
+	[2075] = true,	-- Mausoleum of Legends
+	[2076] = true,	-- Lower Chamber
+	[2077] = true,	-- Crystal Chambers
+	
+	-- 影月墓地 / Shadowmoon Burial Grounds
+	[574] = true,	-- Crypt of the Ancients
+	[575] = true,	-- Altar of Shadow
+	[576] = true,	-- Edge of Reality
+	
+	-- 奈薩魯斯堡 / Neltharus
+	[2080] = true,	-- The Burning Cauldron
+	[2081] = true,	-- Chamber of Flames
 }
 
 local nameList = {
@@ -70,7 +89,7 @@ local nameList = {
 
 local C_Map_GetBestMapForUnit = C_Map.GetBestMapForUnit
 local GetGameTime, GetSubZoneText = GetGameTime, GetSubZoneText
-local SetCVar = SetCVar
+local SetCVar = C_CVar.SetCVar
 
 local function OnEvent()
 	local MapId = C_Map_GetBestMapForUnit("player")
