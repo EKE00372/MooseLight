@@ -8,9 +8,8 @@
 -- CVar Gamma/Brightness/Contrast
 
 local C_Map_GetBestMapForUnit = C_Map.GetBestMapForUnit
-local GetGameTime, GetSubZoneText = GetGameTime, GetSubZoneText
+local GetInstanceInfo, GetGameTime, GetSubZoneText = GetInstanceInfo, GetGameTime, GetSubZoneText
 local SetCVar = C_CVar.SetCVar
-
 
 local timeID = {
 	-- BFA
@@ -18,14 +17,18 @@ local timeID = {
 	[895] = true,	-- Tiragarde Sound / 提加拉德
 	[942] = true,	-- Stormsong Valley / 斯托頌恩
 	-- DF
-	[2022] = true,	-- 甦醒海岸
-	[2023] = true,	-- 雍亞拉平原
-	[2024] = true,	-- 蒼藍高地
-	[2025] = true,	-- 薩爪祖斯
+	[2022] = true,	-- The Waking Shores / 甦醒海岸
+	[2023] = true,	-- 	Ohn'ahran Plains / 雍亞拉平原
+	[2024] = true,	-- The Azure Span / 蒼藍高地
+	[2025] = true,	-- 	Thaldraszus / 薩爪祖斯
+	--[1462] = true,	-- 麥卡貢/機械岡
+	--[1196] = true,
+	--[1197] = true,
+	--[1198] = true,
 }
 
 local zoneDarkID = {
-	--DF
+	-- SL
 	[1533] = true,	-- Bastion / 昇靈堡
 	[1707] = true,	-- Elysian Hold, Archon's Rise / 樂土堡
 	[1708] = true,	-- Elysian Hold, Sanctum of Binding / 樂土堡
@@ -35,41 +38,53 @@ local zoneLightID = {
 	-- AZEROTH
 	[86] = true,	-- Orgrimmar / 奧格瑪暗影裂谷
 	-- LEGION
-	[885] = true,	-- 安托洛斯荒原
+	[885] = true,	-- Antoran Wastes / 安托洛斯荒原
 	-- BFA
-	[1038] = true,	-- Temple of Sethraliss / 瑟沙利斯神廟，尾王中庭以外
+	[1162] = true,	-- Siege of Boralus / 波拉勒斯圍城戰
+	[1038] = true,	-- Temple of Sethraliss / 瑟沙利斯神廟
 	[1152] = true,	-- Uldir, Plague Vault / 奧迪爾，維克提斯
 	[1169] = true,	-- Tol Dagor outside / 托達戈爾戶外	
+	-- BFA VISION
 	[1469] = true, -- Vision of Orgrimmar / 奧格瑪幻象
 	[1470] = true, -- Vision of Stormwind / 暴風城幻象
 	[1570] = true, -- 恆春谷幻象
 	[1571] = true, -- 奧丹姆幻象
+	-- sl
+	[1543] = true, -- The Maw / 噬淵
+	--[1961] = true, -- Korthia / 科西亞
 	-- DF
-	[2095] = true,	-- 晶紅生命之池，閃霜入侵點 / Ruby Life Pools, Infusion Chambers
-	[2095] = true,	-- 洪荒化身牢獄，孵育窩巢 / Vault of the Incarnates, The Primal Convergence
-	[2151] = true,	-- 澤斯克拉密庫
-	[2168] = true,	-- 亞貝魯斯，違抗者壁壘
+	[2151] = true,	-- The Forbidden Reach / 禁忌離島 (澤斯克拉密庫沒有單獨的地圖)
+	[2095] = true,	-- Infusion Chambers / 閃霜入侵點
+	[2133] = true,	-- Zaralek Cavern / 扎拉萊克洞穴
+	
 }
 
 local insLightID = {
+	-- AZEROTH
+	[289] = true,	-- Scholomance OLD / 舊通靈學院
+	[1007] = true,	-- Scholomance / 新通靈學院
+	[329] = true,	-- Stratholme / 斯坦索姆
+	-- WLK
+	[533] = true,	-- Naxxramas
 	-- WOD
-	[1176] = true,	-- 影月墓地 / Shadowmoon Burial Grounds
+	[1176] = true,	-- Shadowmoon Burial Grounds / 影月墓地
 	-- BFA
-	[1762] = true,	-- 諸王之眠 / Kings' Rest
-	[1711] = true,	-- 托達戈爾 / Tol Dagor
-	[1862] = true,	-- 威奎斯特莊園 / Waycrest Manor
-	[1822] = true,	-- Siege of Boralus / 波拉勒斯圍城戰
+	[1841] = true,	-- The Underrot / 幽腐深窟
+	[1762] = true,	-- Kings' Rest / 諸王之眠
+	[1711] = true,	-- Tol Dagor / 托達戈爾
+	[1862] = true,	-- Waycrest Manor / 威奎斯特莊園
 	-- SL
-	[2284] = true,	-- 血紅深淵 / Sanguine Depths
-	[2162] = true,	-- 托加斯特 / Torghast, Tower of the Damned
+	[2284] = true,	-- Sanguine Depths / 血紅深淵
+	[2162] = true,	-- Torghast, Tower of the Damned / 托加斯特
 	-- DF
-	[2515] = true,	-- 蒼藍密庫 / The Azure Vault
-	[2519] = true,	-- 奈薩魯斯堡 / Neltharus
-	[2527] = true,	-- 灌注迴廊 / Halls of Infusion
+	[2515] = true,	-- The Azure Vault / 蒼藍密庫
+	[2519] = true,	-- Neltharus / 奈薩魯斯堡
+	[2520] = true,	-- Brackenhide Hollow / 撅屁...蕨皮谷
+	--[2527] = true,	-- Halls of Infusion / 灌注迴廊
 }
 
 local insDarkID = {
-	[2285] = true,	-- 	晉升之巔 / Spires Of Ascension
+	[2285] = true,	-- Spires Of Ascension / 晉升之巔
 }
 
 local function OnEvent()
