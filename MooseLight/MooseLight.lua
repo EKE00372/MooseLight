@@ -64,10 +64,12 @@ local insLightID = {
 	[289] = true,	-- Scholomance OLD / 舊通靈學院
 	[1007] = true,	-- Scholomance / 新通靈學院
 	[329] = true,	-- Stratholme / 斯坦索姆
-	-- WLK
-	[533] = true,	-- Naxxramas
+	[533] = true,	-- Naxxramas / 納克薩瑪斯
 	-- WOD
 	[1176] = true,	-- Shadowmoon Burial Grounds / 影月墓地
+	-- LEG
+	[1466] = true,	-- Darkheart Thicket / 暗心灌木林
+	[1501] = true,	-- Black Rook Hold / 玄鴉堡
 	-- BFA
 	[1841] = true,	-- The Underrot / 幽腐深窟
 	[1762] = true,	-- Kings' Rest / 諸王之眠
