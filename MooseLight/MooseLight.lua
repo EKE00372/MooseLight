@@ -112,9 +112,6 @@ local function OnEvent()
 			SetCVar("Gamma", 1)
 			SetCVar("Brightness", 50)
 		end
-	elseif nameList[name] then
-		SetCVar("Gamma", 1.2)
-		SetCVar("Brightness", 50)
 	else
 		SetCVar("Gamma", 1)
 		SetCVar("Brightness", 50)
