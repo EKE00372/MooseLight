@@ -56,7 +56,6 @@ local zoneLightID = {
 	[2151] = true,	-- The Forbidden Reach / 禁忌離島 (澤斯克拉密庫沒有單獨的地圖)
 	[2095] = true,	-- Infusion Chambers / 閃霜入侵點
 	[2133] = true,	-- Zaralek Cavern / 扎拉萊克洞穴
-	
 }
 
 local insLightID = {
@@ -83,6 +82,23 @@ local insLightID = {
 	[2519] = true,	-- Neltharus / 奈薩魯斯堡
 	[2520] = true,	-- Brackenhide Hollow / 撅屁...蕨皮谷
 	--[2527] = true,	-- Halls of Infusion / 灌注迴廊
+	-- TWW
+	[2249] = true,	-- 菌菇愚行
+	[2679] = true,	-- 真菌法師洞窟
+	[2680] = true,	-- 地行礦坑
+	[2681] = true,	-- 克里格瓦之眠
+	[2682] = true,	-- 澤克維爾巢穴
+	[2683] = true,	-- 水力發電壩
+	[2684] = true,	-- 恐怖地穴
+	[2685] = true,	-- 奔蛛裂層
+	[2686] = true,	-- 夜暮聖所
+	[2687] = true,	-- 陷坑
+	[2688] = true,	-- 迴繞地道
+	[2689] = true,	-- 塔克-瑞桑深淵
+	[2669] = true,	-- 蛛絲城
+	[2652] = true,	-- 石庫
+	[2651] = true,	-- 暗焰裂縫
+	[2660] = true,	-- 『回音之城』厄拉卡拉
 }
 
 local insDarkID = {
