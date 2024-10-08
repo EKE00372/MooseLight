@@ -5,6 +5,10 @@
 -- https://wowpedia.fandom.com/wiki/InstanceID
 -- macro to get your map id:
 -- /dump C_Map.GetBestMapForUnit("player")
+-- C_AreaPoiInfo.GetAreaPOIInfo(uiMapID, areaPoiID)
+-- https://warcraft.wiki.gg/wiki/API_C_AreaPoiInfo.GetAreaPOIInfo
+-- https://wago.tools/db2/AreaTable
+-- C_Map.GetAreaInfo 9964 潮水聖所  14619 14692 澤斯克拉密庫
 -- CVar Gamma/Brightness/Contrast
 
 local C_Map_GetBestMapForUnit = C_Map.GetBestMapForUnit
@@ -56,6 +60,11 @@ local zoneLightID = {
 	[2151] = true,	-- The Forbidden Reach / 禁忌離島 (澤斯克拉密庫沒有單獨的地圖)
 	[2095] = true,	-- Infusion Chambers / 閃霜入侵點
 	[2133] = true,	-- Zaralek Cavern / 扎拉萊克洞穴
+	-- TWW
+	[2214] = true,	-- 鳴響深淵
+	[2255] = true,	-- 阿茲-卡罕特
+	[2213] = true,	-- 蛛絲城野外
+	--[2256] = true,	-- 阿茲-卡罕特下層 這啥?
 }
 
 local insLightID = {
@@ -64,6 +73,8 @@ local insLightID = {
 	[1007] = true,	-- Scholomance / 新通靈學院
 	[329] = true,	-- Stratholme / 斯坦索姆
 	[533] = true,	-- Naxxramas / 納克薩瑪斯
+	-- CATA
+	[670] = true,	-- Grim Batol	
 	-- WOD
 	[1176] = true,	-- Shadowmoon Burial Grounds / 影月墓地
 	-- LEG
@@ -83,7 +94,7 @@ local insLightID = {
 	[2520] = true,	-- Brackenhide Hollow / 撅屁...蕨皮谷
 	--[2527] = true,	-- Halls of Infusion / 灌注迴廊
 	-- TWW
-	[2249] = true,	-- 菌菇愚行
+	[2664] = true,	-- 菌菇愚行
 	[2679] = true,	-- 真菌法師洞窟
 	[2680] = true,	-- 地行礦坑
 	[2681] = true,	-- 克里格瓦之眠
