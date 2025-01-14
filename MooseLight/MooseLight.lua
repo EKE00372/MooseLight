@@ -1,10 +1,13 @@
 -- [[ 根據地點調整亮度 ]] --
 
 -- add new map id by yourself:
--- https://wow.gamepedia.com/UiMapID
--- https://wowpedia.fandom.com/wiki/InstanceID
+-- https://warcraft.wiki.gg/wiki/UiMapID
+-- https://warcraft.wiki.gg/wiki/InstanceID
+-- https://wago.tools/db2/UiMap
+-- https://wago.tools/db2/Map
 -- macro to get your map id:
 -- /dump C_Map.GetBestMapForUnit("player")
+-- 
 -- C_AreaPoiInfo.GetAreaPOIInfo(uiMapID, areaPoiID)
 -- https://warcraft.wiki.gg/wiki/API_C_AreaPoiInfo.GetAreaPOIInfo
 -- https://wago.tools/db2/AreaTable
@@ -20,6 +23,10 @@ local timeID = {
 	[896] = true,	-- Drustvar / 佐司瓦
 	[895] = true,	-- Tiragarde Sound / 提加拉德
 	[942] = true,	-- Stormsong Valley / 斯托頌恩
+	[864] = true,	-- Vol'dun / 沃魯敦
+	[863] = true,	-- Nazmir / 納茲米爾
+	[862] = true,	-- Zuldazar / 祖達薩
+
 	-- DF
 	[2022] = true,	-- The Waking Shores / 甦醒海岸
 	[2023] = true,	-- 	Ohn'ahran Plains / 雍亞拉平原
@@ -43,6 +50,15 @@ local zoneLightID = {
 	[86] = true,	-- Orgrimmar / 奧格瑪暗影裂谷
 	-- LEGION
 	[885] = true,	-- Antoran Wastes / 安托洛斯荒原
+	-- Antorus, the Burning Throne / 安托洛斯，燃燒王座
+	[909] = true,	-- 	Antorus, the Burning Throne/ 燃燒王座
+	[910] = true,	-- 	Gaze of the Legion / 軍團之視
+	[911] = true,	-- 	Halls of the Boundless Reach / 無縛之境
+	[914] = true,	-- 	The Exhaust / 排氣口
+	--[915] = true,	-- 	The Burning Throne / 燃燒王座
+	[916] = true,	-- 	Chamber of Anguish / 苦痛之廳
+	--[917] = true,	-- 	The World Soul / 世界之魂
+
 	-- BFA
 	[1162] = true,	-- Siege of Boralus / 波拉勒斯圍城戰
 	[1038] = true,	-- Temple of Sethraliss / 瑟沙利斯神廟
@@ -65,6 +81,7 @@ local zoneLightID = {
 	[2255] = true,	-- 阿茲-卡罕特
 	[2213] = true,	-- 蛛絲城野外
 	--[2256] = true,	-- 阿茲-卡罕特下層 這啥?
+	[2369] = true,	-- 海妖島
 }
 
 local insLightID = {

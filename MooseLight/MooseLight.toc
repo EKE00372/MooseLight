@@ -1,6 +1,6 @@
-## Interface: 110002, 110005
+## Interface: 110007, 110010
 ## Title: |cff00ffffMoose|rLight
-## Version: R3.7
+## Version: R3.8
 ## Author: EK (Linodas@Illidan-US)
 ## Notes: adjust gamma when player enter some zones and dungeons.
 ## IconTexture: "Interface\\Buttons\\WHITE8x8"
