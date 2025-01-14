@@ -36,6 +36,8 @@ local timeID = {
 	--[1196] = true,
 	--[1197] = true,
 	--[1198] = true,
+	-- TWW
+	[2369] = true,	-- Siren Isle / 海妖島
 }
 
 local zoneDarkID = {
@@ -58,7 +60,6 @@ local zoneLightID = {
 	--[915] = true,	-- 	The Burning Throne / 燃燒王座
 	[916] = true,	-- 	Chamber of Anguish / 苦痛之廳
 	--[917] = true,	-- 	The World Soul / 世界之魂
-
 	-- BFA
 	[1162] = true,	-- Siege of Boralus / 波拉勒斯圍城戰
 	[1038] = true,	-- Temple of Sethraliss / 瑟沙利斯神廟
@@ -69,7 +70,7 @@ local zoneLightID = {
 	[1470] = true, -- Vision of Stormwind / 暴風城幻象
 	[1570] = true, -- 恆春谷幻象
 	[1571] = true, -- 奧丹姆幻象
-	-- sl
+	-- SL
 	[1543] = true, -- The Maw / 噬淵
 	--[1961] = true, -- Korthia / 科西亞
 	-- DF
@@ -81,7 +82,6 @@ local zoneLightID = {
 	[2255] = true,	-- 阿茲-卡罕特
 	[2213] = true,	-- 蛛絲城野外
 	--[2256] = true,	-- 阿茲-卡罕特下層 這啥?
-	[2369] = true,	-- 海妖島
 }
 
 local insLightID = {
