@@ -82,6 +82,11 @@ ns.zoneLightID = {
 	[2255] = true,	-- 阿茲-卡罕特
 	[2213] = true,	-- 蛛絲城野外
 	--[2256] = true,	-- 阿茲-卡罕特下層 這啥?
+	[2317] = true,	-- 培育所，風暴育所
+	[2318] = true,	-- 培育所，風暴飛騎兵營
+	[2319] = true,	-- 培育所，風暴廳堂
+	[2320] = true,	-- 培育所，廢棄礦坑
+	[2388] = true,	-- 水閘行動，GRID
 }
 
 ns.insLightID = {
@@ -91,7 +96,7 @@ ns.insLightID = {
 	[329] = true,	-- Stratholme / 斯坦索姆
 	[533] = true,	-- Naxxramas / 納克薩瑪斯
 	-- CATA
-	[670] = true,	-- Grim Batol	
+	[670] = true,	-- Grim Batol / 格瑞姆巴托
 	-- WOD
 	[1176] = true,	-- Shadowmoon Burial Grounds / 影月墓地
 	-- LEG
@@ -123,6 +128,8 @@ ns.insLightID = {
 	[2687] = true,	-- 陷坑
 	[2688] = true,	-- 迴繞地道
 	[2689] = true,	-- 塔克-瑞桑深淵
+    [2826] = true,	-- 後街水閘	
+	[2815] = true,	-- 9號挖掘場
 	[2669] = true,	-- 蛛絲城
 	[2652] = true,	-- 石庫
 	[2651] = true,	-- 暗焰裂縫
