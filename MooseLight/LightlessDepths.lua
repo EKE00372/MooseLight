@@ -1,5 +1,5 @@
 local addon, ns = ... 
-if not ns.LDActive == true then return end
+if not (ns.LDActive == true) then return end
 
 local GetInstanceInfo, GetSubZoneText = GetInstanceInfo, GetSubZoneText
 local C_UnitAuras_GetPlayerAuraBySpellID = C_UnitAuras.GetPlayerAuraBySpellID
@@ -8,51 +8,41 @@ local SetCVar = C_CVar.SetCVar
 local LD = CreateFrame("Frame")  --Lightless Depths
 
 -- 減益對應數值 亮度 / 對比 / Gamma
-local spellCVar = {
-    [422806] = {Brightness = 60, Contrast = 75, Gamma = 2.0},
-    [420307] = {Brightness = 60, Contrast = 70, Gamma = 1.5},
-    [420807] = {Brightness = 60, Contrast = 70, Gamma = 1.5},
+local candleSpell = {
+    [420307] = true,
+    [420807] = true,
 }
 
-local defaultCVar = {
-    Brightness = 50,
-    Contrast   = 50,
-    Gamma      = 1.2,
-}
+local candle = { Brightness = 60, Contrast = 70, Gamma = 1.5, id = "candle" }
+local dark  = { Brightness = 60, Contrast = 75, Gamma = 2.0, id = "dark"  }
+local defaults  = { Brightness = 50, Contrast = 50, Gamma = 1.2, }
+local currentState
 
-local curSpell
-local function setCVar(cfg)
-    if not cfg then
-        -- 還原
-        if curSpell then
-            for k, v in pairs(defaultCVar) do
-                SetCVar(k, v)
-            end
-            curSpell = nil
-        end
-        return
-    end
+local function applySettings(cfg)
+    if currentState == cfg.id then return end
+
+    SetCVar("Brightness", cfg.Brightness)
+    SetCVar("Contrast",   cfg.Contrast)
+    SetCVar("Gamma",      cfg.Gamma)
     
-    if curSpell ~= cfg.id then
-        SetCVar("Brightness", cfg.Brightness)
-        SetCVar("Contrast",   cfg.Contrast)
-        SetCVar("Gamma",      cfg.Gamma)
-        curSpell = cfg.id
-    end
+    currentState = cfg.id
+end
+
+local function restoreDefaults()
+    if not currentState then return end
+    for k, v in pairs(defaults) do SetCVar(k, v) end
+    currentState = nil
 end
 
 local function checkAura()
-    local matched
-
-    for spellID, cfg in next, spellCVar do
+    local haveCandle = false
+    for spellID in pairs(candleSpell) do
         if C_UnitAuras_GetPlayerAuraBySpellID(spellID) then
-            matched = cfg
-            matched.id = spellID
+            haveCandle = true
             break
         end
     end
-
-    setCVar(matched)
+    applySettings(haveCandle and candle or dark)
 end
 
 local function zoneCheck()
@@ -65,7 +55,7 @@ local function zoneCheck()
         checkAura()
     else
         LD:UnregisterEvent("UNIT_AURA")
-        setCVar(nil)
+        restoreDefaults()
     end
 end
 

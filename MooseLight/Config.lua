@@ -40,7 +40,7 @@ ns.timeID = {
 	[2369] = true,	-- Siren Isle / 海妖島
 }
 
-zoneDarkID = {
+ns.zoneDarkID = {
 	-- SL
 	[1533] = true,	-- Bastion / 昇靈堡
 	[1707] = true,	-- Elysian Hold, Archon's Rise / 樂土堡
