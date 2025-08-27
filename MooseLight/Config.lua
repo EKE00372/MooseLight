@@ -76,6 +76,7 @@ ns.zoneLightID = {
 	[1543] = true, -- The Maw / 噬淵
 	[1664] = true, -- 贖罪之殿，痛苦中殿
 	[1665] = true, -- 贖罪之殿，靈魂聖所
+	[1995] = true, -- 市集，斯鐸海姆
 	--[1961] = true, -- Korthia / 科西亞
 	-- DF
 	[2151] = true,	-- The Forbidden Reach / 禁忌離島 (澤斯克拉密庫沒有單獨的地圖)
