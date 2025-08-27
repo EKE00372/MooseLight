@@ -9,7 +9,7 @@ local function OnEvent()
 	local hour = GetGameTime()
 	local name = GetSubZoneText()
 	local instanceID = select(8, GetInstanceInfo())
-	local inDepths = (ns.LDActive == true) and ns.ignoreID[instanceID] and ns.subName[name]
+	local inDepths = (ns.DFC_Active == true) and ns.ignoreID[instanceID] and ns.DFC_subName[name]
 
 	if not MapID then return end
 	if inDepths == true then return end
@@ -19,7 +19,7 @@ local function OnEvent()
 		SetCVar("Gamma", 1.2)		-- 0.3~2.8
 		SetCVar("Brightness", 50)	-- 1~100
 		SetCVar("Contrast", 50)		-- 1~100
-	elseif ns.zoneDarkID[MapID] or ns.insDarkID[instanceID] then
+	elseif ns.zoneDarkID[MapID] or ns.insDarkID[instanceID] or ns.EDA_subName[name] then
 		SetCVar("Gamma", .9)
 		SetCVar("Brightness", 40)
 		SetCVar("Contrast", 50)

@@ -1,11 +1,11 @@
 local addon, ns = ... 
-if not (ns.LDActive == true) then return end
+if not (ns.DFC_Active == true) then return end
 
 local GetInstanceInfo, GetSubZoneText = GetInstanceInfo, GetSubZoneText
 local C_UnitAuras_GetPlayerAuraBySpellID = C_UnitAuras.GetPlayerAuraBySpellID
 local SetCVar = C_CVar.SetCVar
 
-local LD = CreateFrame("Frame")  --Lightless Depths
+local DFC = CreateFrame("Frame")  --Lightless Depths
 
 -- 減益對應數值 亮度 / 對比 / Gamma
 local candleSpell = {
@@ -51,10 +51,10 @@ local function zoneCheck()
     local inDepths = ns.ignoreID[instanceID] and ns.subName[name]
 
     if inDepths then
-        LD:RegisterUnitEvent("UNIT_AURA", "player")
+        DFC:RegisterUnitEvent("UNIT_AURA", "player")
         checkAura()
     else
-        LD:UnregisterEvent("UNIT_AURA")
+        DFC:UnregisterEvent("UNIT_AURA")
         restoreDefaults()
     end
 end
@@ -67,8 +67,8 @@ local function OnEvent(self, event)
     end
 end
 
-LD:SetScript("OnEvent", OnEvent)
-LD:RegisterEvent("PLAYER_ENTERING_WORLD")
-LD:RegisterEvent("ZONE_CHANGED_NEW_AREA")
-LD:RegisterEvent("ZONE_CHANGED_INDOORS")
-LD:RegisterEvent("ZONE_CHANGED")
+DFC:SetScript("OnEvent", OnEvent)
+DFC:RegisterEvent("PLAYER_ENTERING_WORLD")
+DFC:RegisterEvent("ZONE_CHANGED_NEW_AREA")
+DFC:RegisterEvent("ZONE_CHANGED_INDOORS")
+DFC:RegisterEvent("ZONE_CHANGED")

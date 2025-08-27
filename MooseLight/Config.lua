@@ -16,7 +16,7 @@ local addon, ns = ...
 -- C_Map.GetAreaInfo 9964 潮水聖所  14619 14692 澤斯克拉密庫
 -- CVar Gamma/Brightness/Contrast
 
-ns.LDActive = true
+ns.DFC_Active = true
 
 ns.timeID = {
 	-- BFA
@@ -26,16 +26,17 @@ ns.timeID = {
 	[864] = true,	-- Vol'dun / 沃魯敦
 	[863] = true,	-- Nazmir / 納茲米爾
 	[862] = true,	-- Zuldazar / 祖達薩
-
+	--[1462] = true,	-- 麥卡貢/機械岡
+	--[1196] = true,
+	--[1197] = true,
+	--[1198] = true,
+	
 	-- DF
 	[2022] = true,	-- The Waking Shores / 甦醒海岸
 	[2023] = true,	-- 	Ohn'ahran Plains / 雍亞拉平原
 	[2024] = true,	-- The Azure Span / 蒼藍高地
 	[2025] = true,	-- 	Thaldraszus / 薩爪祖斯
-	--[1462] = true,	-- 麥卡貢/機械岡
-	--[1196] = true,
-	--[1197] = true,
-	--[1198] = true,
+
 	-- TWW
 	[2369] = true,	-- Siren Isle / 海妖島
 }
@@ -49,6 +50,7 @@ ns.zoneDarkID = {
 
 ns.zoneLightID = {
 	-- AZEROTH
+	--[85] = true,	-- Orgrimmar / 奧格瑪探路者巢穴
 	[86] = true,	-- Orgrimmar / 奧格瑪暗影裂谷
 	-- LEGION
 	[885] = true,	-- Antoran Wastes / 安托洛斯荒原
@@ -72,6 +74,8 @@ ns.zoneLightID = {
 	[1571] = true, -- 奧丹姆幻象
 	-- SL
 	[1543] = true, -- The Maw / 噬淵
+	[1664] = true, -- 贖罪之殿，痛苦中殿
+	[1665] = true, -- 贖罪之殿，靈魂聖所
 	--[1961] = true, -- Korthia / 科西亞
 	-- DF
 	[2151] = true,	-- The Forbidden Reach / 禁忌離島 (澤斯克拉密庫沒有單獨的地圖)
@@ -128,19 +132,21 @@ ns.insLightID = {
 	[2687] = true,	-- 陷坑
 	[2688] = true,	-- 迴繞地道
 	[2689] = true,	-- 塔克-瑞桑深淵
+	[2690] = true,	-- 深淵堡
     [2826] = true,	-- 後街水閘	
 	[2815] = true,	-- 9號挖掘場
 	[2669] = true,	-- 蛛絲城
 	[2652] = true,	-- 石庫
 	[2651] = true,	-- 暗焰裂縫
 	[2660] = true,	-- 『回音之城』厄拉卡拉
+	[2803] = true,	-- 文庫襲擊
 }
 
 ns.insDarkID = {
 	[2285] = true,	-- Spires Of Ascension / 晉升之巔
 }
 
-ns.subName = {
+ns.DFC_subName = {
     ["無光深淵"] = true,
     ["无光深渊"] = true,
     ["Lightless Depths"] = true,
@@ -153,6 +159,21 @@ ns.subName = {
     ["Profundezas Sem Luz"] = true,
     ["Беспросветные глубины"] = true,
 }
+
+ns.EDA_subName = {
+    ["埃達尼沙地"] = true,
+    ["奥尔达尼沙地"] = true,
+    ["Al'dani Sands"] = true,
+    ["Die Sande von Al'dani"] = true,
+    ["Arenas Al'dani"] = true,
+    ["Arenas de Al'dani"] = true,
+    ["Sables d’Al’dani"] = true,
+    ["Sabbie Al'dani"] = true,
+    ["알다니 사막"] = true,
+    ["Areias de Al'dani"] = true,
+    ["Пески \"Аль'дани\""] = true,
+}
+
 
 ns.ignoreID = {
     [2651] = true,
