@@ -173,6 +173,18 @@ ns.EDA_subName = {
     ["알다니 사막"] = true,
     ["Areias de Al'dani"] = true,
     ["Пески \"Аль'дани\""] = true,
+	
+    ["不羈神殿"] = true,
+    ["桀骜之灵的神殿"] = true,
+    ["Храм Необузданного"] = true,
+    ["Templo dos Indomados"] = true,
+    ["길들지 않는 자의 사원"] = true,
+    ["Tempio dell'Indomabile"] = true,
+    ["Temple de l’Indompté"] = true,
+    ["Templo del Indómito"] = true,
+    ["Templo del Indomable"] = true,
+    ["Der Tempel der Ungezähmten"] = true,
+    ["Temple of the Untamed"] = true,
 }
 
 
