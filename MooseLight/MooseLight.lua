@@ -9,6 +9,7 @@ local function OnEvent()
 	local hour = GetGameTime()
 	local name = GetSubZoneText()
 	local instanceID = select(8, GetInstanceInfo())
+	-- DarkflameCleft candle filter
 	local inDepths = (ns.DFC_Active == true) and ns.ignoreID[instanceID] and ns.DFC_subName[name]
 
 	if not MapID then return end

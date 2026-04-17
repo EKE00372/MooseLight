@@ -100,6 +100,8 @@ ns.insLightID = {
 	[1007] = true,	-- Scholomance / 新通靈學院
 	[329] = true,	-- Stratholme / 斯坦索姆
 	[533] = true,	-- Naxxramas / 納克薩瑪斯
+	-- WLK
+	[658] = true,	-- 薩倫之淵
 	-- CATA
 	[670] = true,	-- Grim Batol / 格瑞姆巴托
 	-- WOD
@@ -134,13 +136,19 @@ ns.insLightID = {
 	[2688] = true,	-- 迴繞地道
 	[2689] = true,	-- 塔克-瑞桑深淵
 	[2690] = true,	-- 深淵堡
-    [2826] = true,	-- 後街水閘	
+    [2826] = true,	-- 後街水閘
 	[2815] = true,	-- 9號挖掘場
 	[2669] = true,	-- 蛛絲城
 	[2652] = true,	-- 石庫
 	[2651] = true,	-- 暗焰裂縫
 	[2660] = true,	-- 『回音之城』厄拉卡拉
 	[2803] = true,	-- 文庫襲擊
+	-- Midnight
+	[2952] = true,	-- 暗影領區
+	[2961] = true,	-- 暮光墓穴
+	[2963] = true,	-- 怨鬥坑洞
+	[3003] = true,	-- 黑暗之途
+	[2874] = true,	-- 梅薩拉洞穴
 }
 
 ns.insDarkID = {
